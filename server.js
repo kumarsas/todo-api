@@ -1,16 +1,19 @@
 var express = require('express');
+var bodyParser = require('body-parser');
+var todos = [];
+var todoIterate = 1;
+
 var app = express();
-var PORT = process.env.PORT || 3000;
-var todos = [{
- 	id:1,
- 	name: 'Ashish',
- 	city: 'Salt Lake City'
- },
- {
- 	id:2,
- 	name: 'Maitreyi',
- 	city: 'New York City'
- }];
+var PORT = process.env.PORT || 3001;
+
+app.use( bodyParser.json() );
+
+app.post('/todo', function( req, res){
+	body = req.body; // req.body has all the information of the post reequest
+	body.id = todoIterate++;
+	todos.push( body );
+    res.json(body);
+});
 
 app.get('/', function( req, res ){
 	res.send( 'Hello World!!');

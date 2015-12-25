@@ -75,7 +75,10 @@ HEROKU - Deploy To Github/Heroku
 7) heroku open
 
 8) Push to heroku:
+	git push
 	git push heroku master
 
 
-
+9) POST Menthod -- To add item
+  we will require the body-parser module
+  
