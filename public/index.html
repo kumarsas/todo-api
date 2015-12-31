@@ -1,1 +1,23 @@
-Hello World
+<!DOCTYPE html>
+<html ng-app="todoApp" lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.5/angular.min.js"></script>
+
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <title>To Do App</title>
+
+  </head>
+  <body ng-controller='todoCtrl' >
+    <h1>TODO Application</h1>
+      
+      <div ng-repeat="todo in todos">
+        {{todo.task}}
+      </div>
+      <input type="text" name="task" ng-model="formdata.task"></input>
+      <button type="submit" ng-click="createTodo()">Add</button>
+      <script src = '/js/controller/todoCtrl.js'></script>
+  </body>
+</html>
